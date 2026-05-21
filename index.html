@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#f4f7fc;
+}
+
+.container{
+  display:flex;
+  min-height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+  width:250px;
+  background:#1e293b;
+  color:white;
+  padding:20px;
+}
+
+.sidebar h2{
+  margin-bottom:30px;
+}
+
+.clock-box{
+  background:#334155;
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+}
+
+#clock{
+  font-size:28px;
+  margin-top:10px;
+  font-weight:bold;
+}
+
+/* Main */
+
+.main-content{
+  flex:1;
+  padding:30px;
+}
+
+.top-bar{
+  margin-bottom:30px;
+}
+
+.top-bar h1{
+  color:#1e293b;
+}
+
+/* Form */
+
+.form-container{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
+
+.form-container input{
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  flex:1;
+  min-width:180px;
+}
+
+.form-container button{
+  padding:12px 20px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.form-container button:hover{
+  background:#1d4ed8;
+}
+
+/* Student Cards */
+
+.student-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.student-card{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.student-card h3{
+  margin-bottom:10px;
+  color:#1e293b;
+}
+
+.student-card p{
+  margin-bottom:8px;
+}
+
+.card-buttons{
+  margin-top:15px;
+  display:flex;
+  gap:10px;
+}
+
+.card-buttons button{
+  flex:1;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.intro-btn{
+  background:#10b981;
+  color:white;
+}
+
+.delete-btn{
+  background:#ef4444;
+  color:white;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+  .container{
+    flex-direction:column;
+  }
+
+  .sidebar{
+    width:100%;
+  }
+
+}
+</style>
+
+
+<body>
+
+  <div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>🎓 Dashboard</h2>
+
+      <div class="clock-box">
+        <h3>Live Clock</h3>
+        <p id="clock">00:00:00</p>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <div class="top-bar">
+        <h1>Student Management System</h1>
+      </div>
+
+      <!-- Form -->
+      <div class="form-container">
+
+        <input type="text" id="name" placeholder="Student Name">
+
+        <input type="number" id="age" placeholder="Age">
+
+        <input type="text" id="course" placeholder="Course">
+
+        <button id="addBtn">Add Student</button>
+
+      </div>
+
+      <!-- Student Cards -->
+      <div id="studentList" class="student-list"></div>
+
+    </main>
+
+  </div>
+
+  <script src="task.js"></script>
+</body>
+</html>
